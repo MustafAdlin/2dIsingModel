@@ -33,7 +33,7 @@ print("Initial Energy", calculate_energy(lattice))
 
 initial_energy = calculate_energy(lattice)
 
-def metropolis_step(lattice, kT):
+def metropolis(lattice, kT):
     # Choose a random lattice site
     i = random.randint(0, N-1)
     j = random.randint(0, N-1)
@@ -53,7 +53,7 @@ def metropolis_step(lattice, kT):
 # Perform the simulation
 energies = [initial_energy]
 for step in range(num_steps):
-    metropolis_step(lattice, kT)
+    metropolis(lattice, kT)
     energies.append(calculate_energy(lattice))
 
 # Print the final lattice configuration and energy
